@@ -4,6 +4,15 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "django>=6.1",
+    "django-filter>=26.1",
     "djangorestframework>=3.18.0",
+    "model-bakery>=1.24.0",
     "psycopg2-binary>=2.9.12",
+    "pytest>=9.1.1",
+    "pytest-django>=4.14.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "3.4-django-testing/django_testing",
 ]
