@@ -76,7 +76,14 @@ TEMPLATES = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-    ]
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'advertisements.throttle.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anonymous': '10/m',
+        'authenticated': '20/m',
+    }
 }
 
 WSGI_APPLICATION = 'api_with_restrictions.wsgi.application'
